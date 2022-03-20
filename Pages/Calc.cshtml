@@ -1,0 +1,48 @@
+﻿@page
+@model CalcModel
+@{
+    ViewData["Title"] = "Simple Web Calc";
+}
+
+<div class="text-center">
+    <body>
+    <form name="form1" action="/calc" method="post" asp-antiforgery="true">
+        <div>
+            <input type="text" name="op1_soma" value="@if (Model.op1_soma != 0) @Model.op1_soma">
+            &nbsp;+&nbsp;
+            <input type="text" name="op2_soma" value="@if (Model.op2_soma != 0) @Model.op2_soma">
+            &nbsp;=&nbsp;
+            <input type="text" name="res_soma" value="@if (Model.res_soma != 0) @Model.res_soma">
+            &nbsp;
+            <input type="submit" name="calc1" asp-page-handler="CalcSoma">
+        </div>
+        <div>
+            <input type="text" name="op1_subt" value="@if (Model.op1_subt != 0) @Model.op1_subt">
+            &nbsp;-&nbsp;
+            <input type="text" name="op2_subt" value="@if (Model.op2_subt != 0) @Model.op2_subt">
+            &nbsp;=&nbsp;
+            <input type="text" name="res_subt" value="@if (Model.res_subt != 0) @Model.res_subt">
+            &nbsp;
+            <input type="submit" name="calc2" asp-page-handler="CalcSubt">
+        </div>
+        <div>
+            <input type="text" name="op1_mult" value="@if (Model.op1_mult != 0) @Model.op1_mult">
+            &nbsp;*&nbsp;
+            <input type="text" name="op2_mult" value="@if (Model.op2_mult != 0) @Model.op2_mult">
+            &nbsp;=&nbsp;
+            <input type="text" name="res_mult" value="@if (Model.res_mult != 0) @Model.res_mult">
+            &nbsp;
+            <input type="submit" name="calc3" asp-page-handler="CalcMult">
+        </div>
+        <div>
+            <input type="text" name="op1_div" value="@if (Model.op1_div != 0) @Model.op1_div">
+            &nbsp;/&nbsp;
+            <input type="text" name="op2_div" value="@if (Model.op2_div != 0) @Model.op2_div">
+            &nbsp;=&nbsp;
+            <input type="text" name="res_div" value="@if (Model.res_div != 0) @Model.res_div">
+            &nbsp;
+            <input type="submit" name="calc4" asp-page-handler="CalcDiv">
+        </div>
+    </form>
+</body>
+</div>
